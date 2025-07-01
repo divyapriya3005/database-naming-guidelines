@@ -1,4 +1,4 @@
-# 📘 Database Naming Standards – MySQL
+# 📘 **Database Naming Standards – MySQL**
 
 ---
 
@@ -11,21 +11,21 @@
 - Do **not** store icons or images directly in the database
 - Use **UTF-8 encoding** for all text fields
 
-## 🗃️ Database Name
+## 🗃️ **Database Name**
 - Use lowercase letters only
 - Use underscores (_) instead of spaces
 - Be short but meaningful
 - ✅ Example: `hrms_portal`, `inventory_system`
 - ⚠️ Limit: 64 characters
 
-## 📋 Table Name
+## 📋 **Table Name**
 - Use lowercase with underscores
 - Table names should be plural
 - Prefix with module name if needed
 - ✅ Example: `employee_records`, `product_reviews`
 - ⚠️ Limit: 64 characters
 
-## 📑 Column Name
+## 📑 **Column Name**
 - Use lowercase with underscores
 - Use meaningful and consistent names
 - For Boolean columns: `is_active`, `has_license`
@@ -33,19 +33,19 @@
 - ✅ Example: `first_name`, `created_at`, `user_id`
 - ⚠️ Limit: 64 characters
 
-## 🧱 Column Data Types Best Practices
+## 🧱 **Column Data Types Best Practices**
 - Use `TEXT` or `VARCHAR` for descriptive or long-form text
 - Use `BOOLEAN` for status or true/false values (e.g., `is_active`)
 - Use `INT` for identifiers and numeric counts
 - Use `DATETIME` for tracking created/updated times
 - Use `BLOB` only for binary data (prefer file storage instead)
 
-## 📌 Index and Constraint Names
+## 📌 **Index and Constraint Names**
 - Use format: `idx_<table>_<column>`, `fk_<table>_<ref_table>`
 - ✅ Example: `idx_employee_first_name`, `fk_order_user`
 - ⚠️ Limit: 64 characters
 
-## 📏 Character Limits Summary
+## 📏 **Character Limits Summary**
 
 | Item               | Limit (Characters) |
 |--------------------|--------------------|
@@ -58,7 +58,7 @@
 
 ---
 
-## ✅ Good Practices
+## ✅ **Good Practices**
 - Use `snake_case` consistently
 - Always use `created_at` and `updated_at` fields for timestamping
 - Foreign keys should be indexed
@@ -67,7 +67,7 @@
 - Icons and other binary assets should be stored in the file system or a CDN, not in the DB
 - Set proper encoding (`utf8mb4`) for all text-based fields
 
-## ⚠️ Notes
+## ⚠️ **Notes**
 - MySQL has a 64-character limit on identifiers (database, table, column, etc.)
 - Avoid using camelCase or PascalCase
 - Always double-check reserved keywords [MySQL reserved words list](https://dev.mysql.com/doc/refman/8.0/en/keywords.html)
