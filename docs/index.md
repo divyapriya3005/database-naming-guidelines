@@ -1,15 +1,15 @@
 # 📘 Database Naming Standards – MySQL
 
-## 📅 Date: 20-06-2025
-## 👩‍💻 Author: Divya Priya
-
 ---
 
-## 🔤 General Naming Rules
+## 🔤 **General Naming Rules**
 - Only use: letters (A-Z, a-z), numbers (0-9), and underscores (_)
 - Names must start with a letter
 - Avoid using reserved keywords (e.g., `select`, `from`)
 - Avoid spaces and special characters
+- Store passwords as **hashed values**, never as plain text
+- Do **not** store icons or images directly in the database
+- Use **UTF-8 encoding** for all text fields
 
 ## 🗃️ Database Name
 - Use lowercase letters only
@@ -32,6 +32,13 @@
 - For foreign keys: `referenced_table_id`
 - ✅ Example: `first_name`, `created_at`, `user_id`
 - ⚠️ Limit: 64 characters
+
+## 🧱 Column Data Types Best Practices
+- Use `TEXT` or `VARCHAR` for descriptive or long-form text
+- Use `BOOLEAN` for status or true/false values (e.g., `is_active`)
+- Use `INT` for identifiers and numeric counts
+- Use `DATETIME` for tracking created/updated times
+- Use `BLOB` only for binary data (prefer file storage instead)
 
 ## 📌 Index and Constraint Names
 - Use format: `idx_<table>_<column>`, `fk_<table>_<ref_table>`
@@ -56,6 +63,9 @@
 - Always use `created_at` and `updated_at` fields for timestamping
 - Foreign keys should be indexed
 - Avoid abbreviations unless well-known (e.g., `dob`, `ip_address`)
+- Store passwords securely using a hashing algorithm (e.g., bcrypt)
+- Icons and other binary assets should be stored in the file system or a CDN, not in the DB
+- Set proper encoding (`utf8mb4`) for all text-based fields
 
 ## ⚠️ Notes
 - MySQL has a 64-character limit on identifiers (database, table, column, etc.)
